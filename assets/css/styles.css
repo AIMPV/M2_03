@@ -1,0 +1,106 @@
+html, body {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  height: 100%;
+}
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://example.com/MaterialIcons-Regular.eot);
+  src: local('Material Icons'),
+    local('MaterialIcons-Regular'),
+    url(https://example.com/MaterialIcons-Regular.woff2) format('woff2'),
+    url(https://example.com/MaterialIcons-Regular.woff) format('woff'),
+    url(https://example.com/MaterialIcons-Regular.ttf) format('truetype');
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px; 
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
+}
+.nav {
+  grid-area: nav;
+  background-color: #015598;
+}
+.sidebar {
+  grid-area: sidebar;
+  background-color: #dcdcdc;
+}
+.main {
+  grid-area: main;
+}
+.grid-cards {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 10px;
+}
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+  background-color: #015598;
+}
+.footer {
+  grid-area: footer;
+  background-color: #002f6b;
+}
+.grid-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 9fr 1fr;
+  grid-template-areas:
+      "nav"
+      "sidebar"
+      "main"
+      "footer";
+  height: 100%;
+}
+
+@media (min-width: 576px) {
+  .grid-container {
+    grid-template-areas:
+      "nav nav"
+      "sidebar main"
+      "footer footer";
+      grid-template-rows: 1fr 8fr 1fr;
+      grid-template-columns: 1fr 3fr;
+  }
+  .grid-cards{
+    grid-template-columns: auto auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-areas:
+      "nav sidebar"
+      "nav main "
+      "footer main";
+    grid-template-columns: 2fr 10fr;
+  }
+  .navbar {
+    align-items: baseline;
+  }
+  .navbar-container {
+    flex-direction: column;
+  }
+  .navbar-nav {
+    flex-direction: column !important;
+    text-align: center;
+  }
+  .grid-cards{
+    grid-template-columns: auto auto auto auto;
+  }
+}
